@@ -4,7 +4,7 @@
   <tbody>
   <tr>
     <td style="border:none;min-width:205px;text-align:center">
-      <img src="assets/steampunk.png" alt="Foundation-X Rulebook" style="min-width:200px;min-height:200px" width="200" height="200">
+      <img src="assets/steampunk.png" alt="Foundation-X Rulebook" style="min-width:300px;min-height:300px" width="400" height="200">
     </td>
     <td style="border:none">
       <h3>Project Standards</h3>

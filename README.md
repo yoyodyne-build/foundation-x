@@ -6,7 +6,7 @@
   <tbody>
   <tr>
     <td style="border:none;min-width:205px;text-align:center">
-      <img src="assets/fx-hero-sm.png" alt="Foundation-X Lab" style="min-width:200px;min-height:200px" width="200" height="200">
+      <img src="assets/fx-hero-sm.png" alt="Foundation-X Lab" style="min-width:300px;min-height:300px" width="400" height="200">
     </td>
     <td style="border:none">
       <h3>Demo project for the Foundation-X design system</h3>
