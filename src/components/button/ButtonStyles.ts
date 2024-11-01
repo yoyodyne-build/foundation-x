@@ -1,5 +1,5 @@
-import { cva, VariantProps } from 'class-variance-authority';
-import type { ComponentPropsWithRef } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { type ComponentPropsWithRef } from 'react';
 
 /**
  * Button styles for the Button component.

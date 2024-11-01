@@ -14,9 +14,9 @@ module.exports = {
       { value: 'storybook',  name: 'storybook:  add or update storybook documents' },
       { value: 'style',      name: 'style:      work on global or component specific styles' },
       { value: 'repo',       name: 'repo:       anything related to managing the repo itself' },
-      { value: 'misc',       name: 'misc:       misc stuff ie. does not fit in any other category' },
+      { value: 'misc',       name: 'misc:       miscellaneous stuff ie. does not fit in any other category' },
     ],
-    enableMultipleScopes: true,
+    enableMultipleScopes: false,
   },
   rules: {
     // @see: https://commitlint.js.org/#/reference-rules
