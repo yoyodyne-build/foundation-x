@@ -23,12 +23,26 @@
 As long as you have [git](https://git-scm.com/) installed this project does not require a crazy amount of setup.
 
 - Node.js (LTS) - Long Term Support version promises the best stability
-  - **NOTE:** I highly recommend [Volta](https://volta.sh) to manage Node.js versions on your local machine. It works the same on Windows, Linux, and MacOS.
+  - **NOTE:** We highly recommend [Volta](https://volta.sh) to manage Node.js versions on your local machine. It works identically across Windows, Linux, and MacOS.
 - IDE - [Visual Studio Code](https://code.visualstudio.com/) or [Jetbrains Webstorm](https://www.jetbrains.com/webstorm/) are popular choices
 
 ## Project Structure
 
-**TBD**
+```
+src
+├── common
+│   └── utils
+└── components
+scripts
+
+| Path                  | Description                                            |
+| --------------------- | ------------------------------------------------------ |
+| `src/common`          | Any common code shared by the components and/or tests. |
+| `src/common/utils`    | Common utility functions and classes.                  |
+| `src/components`      | The React components for the system.                   |
+| `scripts`             | Repository utility scripts.                            |
+
+```
 
 ## Development Workflow
 
@@ -97,7 +111,7 @@ The type must be one of the following:
 
 #### Scope (optional)
 
-The scope can be one or more of the following:
+The scope can be empty or one of the following:
 
 - **components** - adding or enhancing components
 - **storybook** - add or update Storybook documentation
@@ -131,26 +145,27 @@ makes them easier to search.
 
 ## Creating a Release
 
-1. Combine changesets into changelog entries and update to the most appropriate semver
+1. Create a release branch to minimize development downtime (ie. "dev freeze") ex:
    ```shell
    # ensure you have the latest changes
    git checkout integration
    git pull
    
-   # create changelog and/or bump version
-   npx changeset version
-   ```
-2. Verify any semver changes in **package.json** and verify/edit the **CHANGELOG.md** file.
-3. Create a release branch to minimize development downtime (ie. "dev freeze")
-   ```shell
    # keeping track of the "when" this deployment happened
    git checkout -B sprint-22
    ```
-4. Seriously #2 - this is your last chance before **they become law**.
-5. Now we can ... wait, did you complete **Step 2**?
-6. Send it to the cloud `git push origin sprint-22`
-7. Magic `npx changeset publish` **NOTE:** This step to be automated when merging `sprint-##` to `main`.
-
+2. Combine changesets into changelog entries and update to the most appropriate semver. ex:
+   ```shell
+   # create changelog and/or bump version
+   npx changeset version
+   ```
+3. Verify any semver changes in **package.json** and verify/edit the **CHANGELOG.md** file.
+4. Seriously #3 - this is your last chance before **they become law**.
+5. Now we can ... wait, did you complete **Step 3**?
+6. Send it to the cloud ex: `git push origin sprint-22`
+7. Create a pull-request from **sprint branch** to **integration** - **DO NOT DELETE THE BRANCH ON THE SERVER**
+8. Create a pull-request from **sprint branch** to **main** - **KEEP ALL SPRINT DEPLOYMENT BRANCHES**
+9. Magic `npx changeset publish` **NOTE:** This step to be automated when merging `sprint-##` to `main`.
 
 ## Thank You for Your Time
 

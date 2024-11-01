@@ -1,6 +1,6 @@
-import { FC, type ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
-import { clsxMerge } from '@/common/utils/classNameUtils';
+import { clsxMerge } from '../../common/utils/classNameUtils';
 import {
   type ButtonBaseProps,
   ButtonStyles,
