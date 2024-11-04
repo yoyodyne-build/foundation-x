@@ -36,15 +36,16 @@
     "./LICENSE": "./LICENSE",
     "./dist/foundation-x.css": "./dist/foundation-x.css",
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "run-s build:pkg build:css",
+    "build": "run-s build:pkg build:css build:storybook",
     "build:pkg": "tsup",
     "build:css": "tailwindcss build -i ./src/index.css -o ./dist/foundation-x.css --minify",
+    "build:storybook": "storybook build",
     "commit": "czg",
     "check:build": "node ./scripts/validate-build.cjs",
     "check:commit": "commitlint --edit",
@@ -52,6 +53,7 @@
     "check:exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "check:lockfile": "node ./scripts/validate-lockfile.cjs",
     "ci": "run-s check:format lint build check:build check:exports",
+    "dev": "npm run storybook",
     "format": "run-p format:*",
     "format:code": "prettier --write .",
     "format:styles": "stylelint \"./src/**/*.css\" --fix",
@@ -63,7 +65,8 @@
     "release:publish": "changeset publish",
     "release:local": "run-s release:version && release:publish",
     "prepublishOnly": "npm run ci",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "storybook dev -p 6006"
   },
   "volta": {
     "node": "22.11.0"
@@ -78,9 +81,18 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.16.4",
     "@changesets/cli": "^2.27.9",
+    "@chromatic-com/storybook": "^3.2.2",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.13.0",
+    "@storybook/addon-essentials": "^8.4.1",
+    "@storybook/addon-interactions": "^8.4.1",
+    "@storybook/addon-onboarding": "^8.4.1",
+    "@storybook/addon-themes": "^8.4.1",
+    "@storybook/blocks": "^8.4.1",
+    "@storybook/react": "^8.4.1",
+    "@storybook/react-vite": "^8.4.1",
+    "@storybook/test": "^8.4.1",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "@types/eslint__js": "~8.42.3",
@@ -103,6 +115,7 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
+    "eslint-plugin-storybook": "^0.10.2",
     "fast-glob": "^3.3.2",
     "globals": "^15.11.0",
     "husky": "^9.1.6",
@@ -112,6 +125,7 @@
     "postcss-url": "^10.1.3",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
+    "storybook": "^8.4.1",
     "stylelint": "^16.10.0",
     "stylelint-config-recommended": "^14.0.1",
     "stylelint-config-standard": "^36.0.1",
@@ -121,5 +135,10 @@
     "tsup": "^8.3.5",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.10.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

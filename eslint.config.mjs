@@ -17,7 +17,7 @@ export default tseslint.config(
       prettierRecommended,
     ],
     files: ['**/*.{ts,tsx}'],
-    ignores: ['dist', 'node_modules', '!.storybook'],
+    ignores: ['dist', 'node_modules', '.storybook'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,

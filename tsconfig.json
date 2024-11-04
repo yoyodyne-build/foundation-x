@@ -24,5 +24,6 @@
     "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true
-  }
+  },
+  "include": ["src/**/*", ".storybook/**/*"]
 }
