@@ -41,7 +41,8 @@ export const Button: FC<ButtonProps> = ({
     <button
       type={type}
       className={clsxMerge(ButtonStyles({ variant, size }), className)}
-      {...props}>
+      {...props}
+    >
       {Boolean(leftIcon) && leftIcon}
       {label}
       {Boolean(rightIcon) && rightIcon}
