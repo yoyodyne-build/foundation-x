@@ -1,3 +1,4 @@
+// biome-ignore lint:
 const fs = require('fs');
 
 /**
@@ -26,6 +27,7 @@ function checkLockFiles() {
   return { invalid: !!error.length, error };
 }
 
+// biome-ignore lint/suspicious/noConsoleLog: feedback
 console.log('🔒🔒🔒 Validating lock file 🔒🔒🔒\n');
 const { invalid, error } = checkLockFiles();
 
@@ -33,6 +35,7 @@ if (invalid) {
   console.error(error);
   process.exit(1);
 } else {
+  // biome-ignore lint/suspicious/noConsoleLog: feedback
   console.log('Lock file is valid 👍');
   process.exit(0);
 }
