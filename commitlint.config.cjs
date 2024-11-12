@@ -1,4 +1,4 @@
-// prettier-ignore
+// biome-ignore format: spaced for better readability
 /** @type {import('czg').UserConfig} */
 
 module.exports = {
