@@ -35,14 +35,15 @@ src
 └── components
 scripts
 
-| Path                  | Description                                            |
-| --------------------- | ------------------------------------------------------ |
-| `src/common`          | Any common code shared by the components and/or tests. |
-| `src/common/utils`    | Common utility functions and classes.                  |
-| `src/components`      | The React components for the system.                   |
-| `scripts`             | Repository utility scripts.                            |
-
 ```
+
+| Path                | Description                                            |
+|---------------------|--------------------------------------------------------|
+| `src/common`        | Any common code shared by the components and/or tests. |
+| `src/common/utils`  | Common utility functions and classes.                  |
+| `src/components`    | The React components for the system.                   |
+| `scripts`           | Repository utility scripts.                            |
+
 
 ## Development Workflow
 
